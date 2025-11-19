@@ -1,0 +1,44 @@
+{
+  "name": "liliam-boutique-backend",
+  "version": "2.0.0",
+  "description": "Backend API para Liliam Boutique - Tienda de Moda",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test:email": "node src/scripts/testEmail.js",
+  "seed": "node src/seeds/seedProducts.js additive",
+    "seed:additive": "node src/seeds/seedProducts.js additive",
+    "seed:overwrite": "node src/seeds/seedProducts.js overwrite",
+    "seed:reset": "node src/seeds/seedProducts.js reset",
+    "seed:from-json:additive": "node src/seeds/seedProducts.js additive json",
+    "seed:from-json:overwrite": "node src/seeds/seedProducts.js overwrite json",
+    "seed:from-json:reset": "node src/seeds/seedProducts.js reset json",
+    "export:products": "node src/scripts/exportProducts.js",
+    "import:products:additive": "node src/scripts/importProducts.js additive",
+    "import:products:overwrite": "node src/scripts/importProducts.js overwrite",
+    "import:products:reset": "node src/scripts/importProducts.js reset"
+  },
+  "keywords": [
+    "ecommerce",
+    "fashion",
+    "api",
+    "mongodb"
+  ],
+  "author": "Fernando",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "googleapis": "^166.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

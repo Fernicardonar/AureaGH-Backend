@@ -1,0 +1,807 @@
+[
+  {
+    "name": "Conjunto Casual Black",
+    "description": "Conjunto casual moderno para el día a día",
+    "price": 229900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP2.jpg",
+    "images": [],
+    "stock": 20,
+    "rating": 4,
+    "reviewsCount": 0,
+    "badge": "Trending",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 5,
+        "sku": "CCB-S-NEG",
+        "_id": "690939690520af8d09fb7efe"
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 5,
+        "sku": "CCB-M-NEG",
+        "_id": "690939690520af8d09fb7eff"
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 5,
+        "sku": "CCB-L-NEG",
+        "_id": "690939690520af8d09fb7f00"
+      },
+      {
+        "size": "XL",
+        "color": "Negro",
+        "stock": 5,
+        "sku": "CCB-XL-NEG",
+        "_id": "690939690520af8d09fb7f01"
+      }
+    ],
+    "details": {
+      "materials": "100% Algodón orgánico",
+      "care": "Lavar a máquina a 30°C. Secar a la sombra.",
+      "features": [
+        "Tejido suave y transpirable",
+        "Diseño casual versátil",
+        "Perfecto para uso diario"
+      ],
+      "fit": "Corte holgado, para un ajuste más ceñido considera una talla menos"
+    },
+    "active": true
+  },
+  {
+    "name": "Conjunto Falda Gold",
+    "description": "Hermoso conjunto con detalles dorados",
+    "price": 179900,
+    "originalPrice": 229900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP3.jpg",
+    "images": [],
+    "stock": 12,
+    "rating": 5,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": true,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Dorado",
+      "Negro"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Dorado",
+        "stock": 2,
+        "sku": "CFG-S-DOR",
+        "_id": "690939690520af8d09fb7f03"
+      },
+      {
+        "size": "M",
+        "color": "Dorado",
+        "stock": 3,
+        "sku": "CFG-M-DOR",
+        "_id": "690939690520af8d09fb7f04"
+      },
+      {
+        "size": "L",
+        "color": "Dorado",
+        "stock": 1,
+        "sku": "CFG-L-DOR",
+        "_id": "690939690520af8d09fb7f05"
+      },
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 2,
+        "sku": "CFG-S-NEG",
+        "_id": "690939690520af8d09fb7f06"
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 3,
+        "sku": "CFG-M-NEG",
+        "_id": "690939690520af8d09fb7f07"
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 1,
+        "sku": "CFG-L-NEG",
+        "_id": "690939690520af8d09fb7f08"
+      }
+    ],
+    "details": {
+      "materials": "80% Algodón, 15% Poliéster, 5% Elastano",
+      "care": "Lavar a mano en agua fría. No usar blanqueador. Planchar a temperatura baja.",
+      "features": [
+        "Conjunto de 2 piezas (top y falda)",
+        "Detalles metálicos en dorado",
+        "Elástico en la cintura para mayor comodidad",
+        "Perfecto para eventos especiales"
+      ],
+      "fit": "Corte ajustado, se recomienda talla habitual"
+    },
+    "active": true
+  },
+  {
+    "name": "Vestido Floral Primavera",
+    "description": "Hermoso vestido con estampado floral",
+    "price": 189900,
+    "originalPrice": 249900,
+    "category": "mujer",
+    "image": "/images/categories/Mujer/vestido 7.jpg",
+    "images": [],
+    "stock": 10,
+    "rating": 4.8,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": true,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Multicolor"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Blusa Satinada Elegante",
+    "description": "Blusa de satín con acabado brillante ideal para eventos",
+    "price": 159900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP1.jpg",
+    "images": [],
+    "stock": 18,
+    "rating": 4.3,
+    "reviewsCount": 0,
+    "badge": "Nuevo",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Negro"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Falda Plisada Rosa",
+    "description": "Falda plisada elegante para temporada",
+    "price": 149900,
+    "originalPrice": 199900,
+    "category": "mujer",
+    "image": "/images/categories/Mujer/vestido 7.jpg",
+    "images": [],
+    "stock": 22,
+    "rating": 4.6,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Rosa"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Chaqueta Chic Urbana",
+    "description": "Chaqueta moderna para look casual urbano",
+    "price": 249900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP2.jpg",
+    "images": [],
+    "stock": 14,
+    "rating": 4.7,
+    "reviewsCount": 0,
+    "badge": "",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Beige",
+      "Negro"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Pantalón Slim Fit",
+    "description": "Pantalón ajustado de corte moderno",
+    "price": 169900,
+    "originalPrice": 219900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP3.jpg",
+    "images": [],
+    "stock": 25,
+    "rating": 4.4,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro",
+      "Azul"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Top Velvet Noche",
+    "description": "Top de terciopelo perfecto para salidas nocturnas",
+    "price": 129900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP1.jpg",
+    "images": [],
+    "stock": 30,
+    "rating": 4.2,
+    "reviewsCount": 0,
+    "badge": "",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Vino",
+      "Negro"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Cardigan Soft Comfort",
+    "description": "Cardigan suave y cómodo para el día a día",
+    "price": 139900,
+    "originalPrice": 179900,
+    "category": "mujer",
+    "image": "/images/categories/Mujer/vestido 7.jpg",
+    "images": [],
+    "stock": 28,
+    "rating": 4.5,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Gris",
+      "Beige"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Jeans High Rise Skinny",
+    "description": "Jeans de cintura alta con ajuste perfecto",
+    "price": 179900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP2.jpg",
+    "images": [],
+    "stock": 20,
+    "rating": 4.8,
+    "reviewsCount": 0,
+    "badge": "Trending",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Azul"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Kimono Breeze Verano",
+    "description": "Kimono ligero ideal para clima cálido",
+    "price": 159900,
+    "originalPrice": 199900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP3.jpg",
+    "images": [],
+    "stock": 16,
+    "rating": 4.3,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Floral"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camiseta Grey Basic",
+    "description": "Camiseta básica de alta calidad",
+    "price": 139900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET1.jpg",
+    "images": [],
+    "stock": 30,
+    "rating": 4.3,
+    "reviewsCount": 0,
+    "badge": "Trending",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Gris"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camiseta Pink Modern",
+    "description": "Camiseta moderna en color rosa",
+    "price": 139900,
+    "originalPrice": 169900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET2.jpg",
+    "images": [],
+    "stock": 25,
+    "rating": 4,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Azul"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camiseta Black Classic",
+    "description": "Camiseta clásica negra esencial",
+    "price": 139900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET3.jpg",
+    "images": [],
+    "stock": 35,
+    "rating": 4,
+    "reviewsCount": 0,
+    "badge": "Nuevo",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camisa Monet Elegante",
+    "description": "Camisa elegante para hombre de corte slim",
+    "price": 159900,
+    "originalPrice": 199900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET5.jpg",
+    "images": [],
+    "stock": 18,
+    "rating": 4.5,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": true,
+    "onSale": true,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Azul"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camisa Oxford Formal",
+    "description": "Camisa Oxford de corte formal ideal para oficina",
+    "price": 169900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET5.jpg",
+    "images": [],
+    "stock": 22,
+    "rating": 4.6,
+    "reviewsCount": 0,
+    "badge": "",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Blanco",
+      "Celeste"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Pantalón Chino Casual",
+    "description": "Pantalón chino de corte casual cómodo",
+    "price": 189900,
+    "originalPrice": 239900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET1.jpg",
+    "images": [],
+    "stock": 20,
+    "rating": 4.4,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Beige",
+      "Negro"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Chaqueta Denim Urban",
+    "description": "Chaqueta de mezclilla estilo urbano",
+    "price": 249900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET2.jpg",
+    "images": [],
+    "stock": 15,
+    "rating": 4.7,
+    "reviewsCount": 0,
+    "badge": "Trending",
+    "featured": true,
+    "onSale": false,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Azul"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Hoodie Urban Comfort",
+    "description": "Hoodie urbano cómodo para uso diario",
+    "price": 179900,
+    "originalPrice": 219900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET3.jpg",
+    "images": [],
+    "stock": 28,
+    "rating": 4.5,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Negro",
+      "Gris"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Polo Essential Fit",
+    "description": "Polo esencial de corte regular",
+    "price": 129900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET1.jpg",
+    "images": [],
+    "stock": 32,
+    "rating": 4.2,
+    "reviewsCount": 0,
+    "badge": "Nuevo",
+    "featured": false,
+    "onSale": false,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Negro",
+      "Azul"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Jogger Sport Active",
+    "description": "Pantalón jogger deportivo para actividad física",
+    "price": 159900,
+    "originalPrice": 199900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET2.jpg",
+    "images": [],
+    "stock": 24,
+    "rating": 4.6,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro",
+      "Gris"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camisa Linen Fresh",
+    "description": "Camisa de lino fresca para verano",
+    "price": 189900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET5.jpg",
+    "images": [],
+    "stock": 18,
+    "rating": 4.4,
+    "reviewsCount": 0,
+    "badge": "",
+    "featured": false,
+    "onSale": false,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Beige"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Camiseta Graphic Street",
+    "description": "Camiseta con diseño gráfico estilo urbano",
+    "price": 149900,
+    "originalPrice": 189900,
+    "category": "hombre",
+    "image": "/images/categories/Hombre/MONET3.jpg",
+    "images": [],
+    "stock": 26,
+    "rating": 4.3,
+    "reviewsCount": 0,
+    "badge": "Oferta",
+    "featured": false,
+    "onSale": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro",
+      "Blanco"
+    ],
+    "details": {
+      "features": []
+    },
+    "active": true,
+    "variants": []
+  },
+  {
+    "name": "Vestido Negro Elegance",
+    "description": "Elegante vestido negro perfecto para ocasiones especiales",
+    "price": 269900,
+    "category": "mujer",
+    "image": "/images/categories/Destacados/TOP1.jpg",
+    "images": [],
+    "stock": 15,
+    "rating": 4.5,
+    "reviewsCount": 0,
+    "badge": "",
+    "featured": false,
+    "onSale": false,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Negro"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 5,
+        "sku": "VNE-S-NEG",
+        "_id": "690939690520af8d09fb7efa"
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 6,
+        "sku": "VNE-M-NEG",
+        "_id": "690939690520af8d09fb7efb"
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 4,
+        "sku": "VNE-L-NEG",
+        "_id": "690939690520af8d09fb7efc"
+      }
+    ],
+    "details": {
+      "materials": "95% Poliéster, 5% Elastano",
+      "care": "Lavar a máquina con agua fría. No usar blanqueador. Secar en plano.",
+      "features": [
+        "Diseño elegante y versátil",
+        "Cierre trasero con cremallera invisible",
+        "Forro interior suave",
+        "Corte ajustado en la cintura"
+      ],
+      "fit": "Corte regular, talla normalmente"
+    },
+    "active": true,
+    "originalPrice": 0,
+    "sku": "001"
+  }
+]
