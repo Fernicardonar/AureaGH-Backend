@@ -6,7 +6,12 @@ const User = require('../models/User.model')
 // @access  Public
 exports.getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find({ active: true })
+    const products = await Product.find({
+      $or: [
+        { active: true },
+        { active: { $exists: false } }
+      ]
+    })
     res.json(products)
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener productos', error: error.message })
@@ -49,7 +54,10 @@ exports.getProductsByCategory = async (req, res) => {
   try {
     const products = await Product.find({ 
       category: req.params.category.toLowerCase(),
-      active: true 
+      $or: [
+        { active: true },
+        { active: { $exists: false } }
+      ]
     })
     res.json(products)
   } catch (error) {
@@ -62,7 +70,13 @@ exports.getProductsByCategory = async (req, res) => {
 // @access  Public
 exports.getFeaturedProducts = async (req, res) => {
   try {
-    const products = await Product.find({ featured: true, active: true })
+    const products = await Product.find({
+      featured: true,
+      $or: [
+        { active: true },
+        { active: { $exists: false } }
+      ]
+    })
     res.json(products)
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener productos destacados', error: error.message })
@@ -74,7 +88,13 @@ exports.getFeaturedProducts = async (req, res) => {
 // @access  Public
 exports.getPromotions = async (req, res) => {
   try {
-    const products = await Product.find({ onSale: true, active: true })
+    const products = await Product.find({
+      onSale: true,
+      $or: [
+        { active: true },
+        { active: { $exists: false } }
+      ]
+    })
     res.json(products)
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener promociones', error: error.message })
@@ -89,7 +109,10 @@ exports.searchProducts = async (req, res) => {
     const { q } = req.query
     const products = await Product.find({
       $text: { $search: q },
-      active: true
+      $or: [
+        { active: true },
+        { active: { $exists: false } }
+      ]
     })
     res.json(products)
   } catch (error) {

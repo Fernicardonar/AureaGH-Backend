@@ -57,10 +57,16 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body
 
+    // Normalizar email (coherente con registro y esquema lowercase)
+    const normalizedEmail = (email || '').toLowerCase().trim()
+
     // Buscar usuario y incluir password
-    const user = await User.findOne({ email }).select('+password')
+    const user = await User.findOne({ email: normalizedEmail }).select('+password')
 
     if (user && (await user.matchPassword(password))) {
+      if (!process.env.JWT_SECRET) {
+        return res.status(500).json({ message: 'Configuración inválida del servidor: falta JWT_SECRET' })
+      }
       res.json({
         _id: user._id,
         nombre: user.nombre,
