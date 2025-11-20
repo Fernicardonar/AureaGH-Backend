@@ -16,10 +16,17 @@ connectDB()
 const app = express()
 
 // Middlewares
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  credentials: true
-}))
+// CORS: permite localhost para desarrollo y Vercel para producción
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'https://aureaghf-frontend.vercel.app'
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -46,7 +53,16 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3001
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en puerto ${PORT}`)
   console.log(`📍 URL: http://localhost:${PORT}/api`)
+})
+
+// Manejar errores no capturados
+process.on('uncaughtException', (error) => {
+  console.error('❌ Error no capturado:', error)
+})
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Promesa rechazada no manejada:', reason)
 })
