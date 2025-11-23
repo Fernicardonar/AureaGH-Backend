@@ -17,11 +17,18 @@ const app = express()
 
 // Middlewares
 // CORS: permite localhost para desarrollo y Vercel para producción
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL?.trim(),
+  'https://aureaghf-frontend.vercel.app', // legacy domain (por si persiste en caché)
+  'https://aureaghf-frontend-n18i.vercel.app' // nuevo dominio explícito
+].filter(Boolean)
+
 const corsOptions = {
-  origin: [
-    'http://localhost:5173',
-    'https://aureaghf-frontend.vercel.app'
-  ],
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.includes(origin)) return cb(null, true)
+    return cb(new Error('Origen no permitido por CORS: ' + origin))
+  },
   credentials: true,
   optionsSuccessStatus: 200
 }
