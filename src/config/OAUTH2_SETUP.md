@@ -131,6 +131,9 @@ GMAIL_REFRESH_TOKEN=1//0gABC123def456GHI789jkl
    ```
 
 3. Prueba enviando un mensaje desde el formulario de contacto en tu aplicación
+4. También puedes usar el script: `npm run test:email`
+
+Si tu plataforma bloquea conexiones SMTP salientes (puertos 465/587), el código intentará automáticamente el envío vía **Gmail API (HTTP)**, que sólo requiere HTTPS y las mismas credenciales OAuth2.
 
 ---
 
@@ -148,30 +151,31 @@ GMAIL_REFRESH_TOKEN=1//0gABC123def456GHI789jkl
 - El usuario `aureavirtualshop@gmail.com` no está agregado como usuario de prueba
 - Solución: Agrégalo en Google Cloud Console → OAuth consent screen → Test users
 
-### El servidor usa contraseña de aplicación como fallback
-- Las variables OAuth2 no están configuradas
-- Solución: Verifica que `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET` y `GMAIL_REFRESH_TOKEN` estén en el `.env`
+### Envío cae al fallback Gmail API
+- Ocurre cuando el host bloquea puertos SMTP.
+- Verás en logs: `Envío SMTP OAuth2 falló, probando Gmail API HTTP...`
+- Si también falla Gmail API: revisa alcance (`https://mail.google.com/`) y refresh token.
 
 ---
 
-## Ventajas vs Contraseña de Aplicación
+## Ventajas Clave de OAuth2
 
-| Característica | OAuth2 | Contraseña App |
-|---------------|--------|----------------|
-| Seguridad | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Tokens temporales | ✅ | ❌ |
-| Revocable remotamente | ✅ | ❌ |
-| Recomendado por Google | ✅ | ⚠️ Deprecado |
-| Complejidad setup | Media | Baja |
+| Característica | OAuth2 |
+|---------------|--------|
+| Seguridad | ⭐⭐⭐⭐⭐ |
+| Tokens temporales | ✅ |
+| Revocable remotamente | ✅ |
+| Acceso mínimo (scope) | ✅ |
+| Compatible con Gmail API HTTP | ✅ |
 
 ---
 
 ## Notas Adicionales
 
-- El **refresh token** no expira a menos que:
-  - No se use por 6 meses
-  - El usuario revoque el acceso
-  - Cambies la contraseña de Google
+- El **refresh token** puede invalidarse si:
+   - No se usa por 6 meses
+   - El usuario revoca el acceso
+   - Se cambia la contraseña de Google
 
 - Puedes revocar el acceso en cualquier momento desde:
   [myaccount.google.com/permissions](https://myaccount.google.com/permissions)
@@ -187,4 +191,4 @@ Si tienes problemas con la configuración:
 2. Verifica que todas las variables estén correctamente copiadas (sin espacios extra)
 3. Asegúrate de estar usando la cuenta correcta (`aureavirtualshop@gmail.com`)
 
-¡Listo! Tu aplicación ahora usa OAuth2 de forma segura. 🎉
+¡Listo! Tu aplicación ahora usa OAuth2 (y fallback Gmail API HTTP) de forma segura. 🎉

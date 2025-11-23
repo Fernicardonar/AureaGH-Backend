@@ -1,4 +1,4 @@
-const { createEmailTransporter } = require('../config/email')
+const { sendEmail } = require('../config/email')
 
 // @desc    Enviar mensaje de contacto
 // @route   POST /api/contact/send
@@ -10,9 +10,6 @@ exports.sendContactMessage = async (req, res) => {
     if (!nombre || !email || !asunto || !mensaje) {
       return res.status(400).json({ message: 'Todos los campos obligatorios deben estar completos' })
     }
-
-    // Crear transporter con OAuth2
-    const transporter = await createEmailTransporter()
 
     const mensajeCompleto = `
 Nuevo mensaje de contacto desde Áurea Virtual Shop
@@ -26,10 +23,9 @@ Mensaje:
 ${mensaje}
     `
 
-    // Enviar email
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+    // Enviar email con fallback (SMTP -> Gmail API)
+    await sendEmail({
+      to: process.env.EMAIL_USER || process.env.GMAIL_USER,
       subject: `Nuevo mensaje de contacto: ${asunto}`,
       text: mensajeCompleto,
       replyTo: email
