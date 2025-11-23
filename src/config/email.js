@@ -120,28 +120,34 @@ const sendViaGmailApi = async ({ from, to, subject, text, html, replyTo }) => {
  * Helper de alto nivel para enviar correo con fallback HTTP si SMTP falla
  */
 async function sendEmail({ to, subject, text, html, replyTo }) {
-  // Intentar enviar usando nodemailer OAuth2 (puede fallar si el host bloquea SMTP)
-  try {
-    const transporter = await createEmailTransporter()
-    await transporter.sendMail({
-      from: getEnv('EMAIL_USER', ['GMAIL_USER']),
-      to,
-      subject,
-      text,
-      html,
-      replyTo
-    })
-    return { ok: true, via: 'oauth2-smtp' }
-  } catch (err) {
-    console.warn('⚠️  Envío SMTP OAuth2 falló, probando Gmail API HTTP...', err?.message)
+  const forceApi = process.env.EMAIL_FORCE_API === 'true'
+
+  if (!forceApi) {
+    // Intentar enviar usando nodemailer OAuth2 (puede fallar si el host bloquea SMTP)
+    try {
+      const transporter = await createEmailTransporter()
+      await transporter.sendMail({
+        from: getEnv('EMAIL_USER', ['GMAIL_USER']),
+        to,
+        subject,
+        text,
+        html,
+        replyTo
+      })
+      return { ok: true, via: 'oauth2-smtp' }
+    } catch (err) {
+      console.warn('⚠️  Envío SMTP OAuth2 falló, probando Gmail API HTTP...', err?.message)
+    }
+  } else {
+    console.log('🔁 EMAIL_FORCE_API=true -> omitiendo intento SMTP y usando Gmail API directamente')
   }
 
-  // Fallback: Gmail REST API (HTTPS)
+  // Gmail REST API (HTTPS) directo o como fallback
   try {
     await sendViaGmailApi({ to, subject, text, html, replyTo })
     return { ok: true, via: 'gmail-api' }
   } catch (err) {
-    console.error('❌ Fallback Gmail API falló:', err?.message)
+    console.error('❌ Envío Gmail API falló:', err?.message)
     throw err
   }
 }
