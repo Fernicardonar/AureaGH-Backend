@@ -21,15 +21,21 @@ const testEmailConfiguration = async () => {
       console.log(`   - Refresh Token (inicio): ${process.env.GMAIL_REFRESH_TOKEN.substring(0, 18)}...`)
     }
 
-    console.log('\n📧 Creando transporter de email...')
+    const forceApi = process.env.EMAIL_FORCE_API === 'true'
+    console.log(`\n⚙️ EMAIL_FORCE_API=${forceApi}`)
     let transporter
-    try {
-      transporter = await createEmailTransporter()
-      console.log('\n🔍 Verificando conexión SMTP OAuth2...')
-      await transporter.verify()
-      console.log('✅ Conexión SMTP OAuth2 verificada!\n')
-    } catch (err) {
-      console.warn('⚠️  SMTP OAuth2 no verificable, se intentará Gmail API HTTP en envío de prueba.')
+    if (!forceApi) {
+      console.log('\n📧 Creando transporter de email...')
+      try {
+        transporter = await createEmailTransporter()
+        console.log('\n🔍 Verificando conexión SMTP OAuth2...')
+        await transporter.verify()
+        console.log('✅ Conexión SMTP OAuth2 verificada!\n')
+      } catch (err) {
+        console.warn('⚠️  SMTP OAuth2 no verificable, se intentará Gmail API HTTP en envío de prueba.')
+      }
+    } else {
+      console.log('\n🔁 Modo forzado: se omite creación/verificación SMTP y se usará Gmail API directamente en el envío')
     }
 
     // Opción para enviar email de prueba
@@ -46,15 +52,17 @@ const testEmailConfiguration = async () => {
           
           const result = await sendEmail({
             to: process.env.EMAIL_USER,
-            subject: '✅ Prueba OAuth2 / Fallback Gmail API',
+            subject: '✅ Prueba OAuth2 / Gmail API',
             text: `Prueba de envío.
-Modo utilizado: ${transporter ? 'SMTP OAuth2 (si no falló)' : 'Gmail API HTTP'}
+Force API: ${forceApi}
+Vía esperada: ${forceApi ? 'gmail-api directa' : (transporter ? 'oauth2-smtp (o fallback gmail-api)' : 'gmail-api')}
 Fecha: ${new Date().toLocaleString('es-CO')}`,
             html: `<div style="font-family:Arial;margin:20px;">
               <h2>✅ Prueba de configuración Email</h2>
-              <p><strong>Modo utilizado:</strong> ${transporter ? 'SMTP OAuth2 (si no falló)' : 'Gmail API HTTP'} </p>
+              <p><strong>Force API:</strong> ${forceApi}</p>
+              <p><strong>Vía esperada:</strong> ${forceApi ? 'gmail-api directa' : (transporter ? 'oauth2-smtp (o fallback gmail-api)' : 'gmail-api')}</p>
               <p><strong>Fecha:</strong> ${new Date().toLocaleString('es-CO')}</p>
-              <p>Este correo confirma que las credenciales OAuth2 funcionan y que el fallback Gmail API está activo si el host bloquea SMTP.</p>
+              <p>Este correo confirma que las credenciales OAuth2 funcionan y que el modo forzado Gmail API se aplica cuando SMTP está bloqueado o deshabilitado.</p>
             </div>`
           })
 

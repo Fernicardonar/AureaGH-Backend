@@ -135,6 +135,13 @@ GMAIL_REFRESH_TOKEN=1//0gABC123def456GHI789jkl
 
 Si tu plataforma bloquea conexiones SMTP salientes (puertos 465/587), el código intentará automáticamente el envío vía **Gmail API (HTTP)**, que sólo requiere HTTPS y las mismas credenciales OAuth2.
 
+### Forzar uso directo de Gmail API
+Si sabes que el host (por ejemplo Render) bloquea SMTP y no quieres ver timeouts en los logs, añade en tu `.env`:
+```env
+EMAIL_FORCE_API=true
+```
+Con esto se omite el intento SMTP y se envía siempre por la API HTTP.
+
 ---
 
 ## Troubleshooting
@@ -191,4 +198,4 @@ Si tienes problemas con la configuración:
 2. Verifica que todas las variables estén correctamente copiadas (sin espacios extra)
 3. Asegúrate de estar usando la cuenta correcta (`aureavirtualshop@gmail.com`)
 
-¡Listo! Tu aplicación ahora usa OAuth2 (y fallback Gmail API HTTP) de forma segura. 🎉
+¡Listo! Tu aplicación ahora usa OAuth2 (y Gmail API HTTP directa o como fallback) de forma segura. 🎉
