@@ -8,7 +8,9 @@ const {
   login,
   getMe,
   updateProfile,
-  getMyFavorites
+  getMyFavorites,
+  forgotPassword,
+  resetPassword
 } = require('../controllers/auth.controller')
 
 // Validaciones
@@ -23,9 +25,19 @@ const loginValidation = [
   body('password').notEmpty().withMessage('La contraseña es requerida')
 ]
 
+const forgotPasswordValidation = [
+  body('email').isEmail().withMessage('Email inválido')
+]
+
+const resetPasswordValidation = [
+  body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres')
+]
+
 // Rutas públicas
 router.post('/register', registerValidation, validate, register)
 router.post('/login', loginValidation, validate, login)
+router.post('/forgot-password', forgotPasswordValidation, validate, forgotPassword)
+router.put('/reset-password/:resetToken', resetPasswordValidation, validate, resetPassword)
 
 // Rutas protegidas
 router.get('/me', protect, getMe)
