@@ -10,11 +10,18 @@ exports.protect = async (req, res, next) => {
       // Obtener token del header
       token = req.headers.authorization.split(' ')[1]
 
+      console.log('[Auth Middleware] Token recibido:', token.substring(0, 20) + '...')
+      console.log('[Auth Middleware] JWT_SECRET definido:', !!process.env.JWT_SECRET)
+
       // Verificar token
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
+      console.log('[Auth Middleware] Token decodificado:', decoded)
+
       // Obtener usuario del token
       req.user = await User.findById(decoded.id).select('-password')
+
+      console.log('[Auth Middleware] Usuario encontrado:', req.user ? req.user._id : 'NO ENCONTRADO')
 
       if (!req.user) {
         return res.status(401).json({ message: 'Usuario no encontrado' })
@@ -22,12 +29,13 @@ exports.protect = async (req, res, next) => {
 
       next()
     } catch (error) {
-      console.error(error)
-      return res.status(401).json({ message: 'No autorizado, token inválido' })
+      console.error('[Auth Middleware] Error:', error.message)
+      return res.status(401).json({ message: 'No autorizado, token inválido', error: error.message })
     }
   }
 
   if (!token) {
+    console.error('[Auth Middleware] No hay token en headers')
     return res.status(401).json({ message: 'No autorizado, no hay token' })
   }
 }

@@ -6,11 +6,13 @@ const {
   getMyOrders,
   getOrderById,
   updateOrderStatus,
-  getAllOrders
+  getAllOrders,
+  createWhatsAppOrder
 } = require('../controllers/order.controller')
 
 // Rutas protegidas
 router.post('/', protect, createOrder)
+router.post('/whatsapp/create', protect, createWhatsAppOrder)
 router.get('/my-orders', protect, getMyOrders)
 router.get('/:id', protect, getOrderById)
 

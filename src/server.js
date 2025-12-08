@@ -3,6 +3,13 @@ const express = require('express')
 const cors = require('cors')
 const connectDB = require('./config/database')
 
+// Log de variables de entorno críticas
+console.log('[Server Init]')
+console.log('  NODE_ENV:', process.env.NODE_ENV)
+console.log('  JWT_SECRET definido:', !!process.env.JWT_SECRET)
+console.log('  MONGODB_URI definido:', !!process.env.MONGODB_URI)
+console.log('  PORT:', process.env.PORT || 3001)
+
 // Importar rutas
 const authRoutes = require('./routes/auth.routes')
 const productRoutes = require('./routes/product.routes')

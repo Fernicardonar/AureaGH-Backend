@@ -15,7 +15,9 @@ const orderItemSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true
-  }
+  },
+  size: String,
+  color: String
 })
 
 const orderSchema = new mongoose.Schema({
@@ -26,9 +28,9 @@ const orderSchema = new mongoose.Schema({
   },
   orderItems: [orderItemSchema],
   shippingAddress: {
-    calle: { type: String, required: true },
-    ciudad: { type: String, required: true },
-    departamento: { type: String, required: true },
+    calle: { type: String },
+    ciudad: { type: String },
+    departamento: { type: String },
     codigoPostal: String
   },
   paymentMethod: {
@@ -53,7 +55,7 @@ const orderSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['pendiente', 'procesando', 'enviado', 'entregado', 'cancelado'],
+    enum: ['pendiente', 'pendiente_confirmacion', 'procesando', 'enviado', 'entregado', 'cancelado', 'pagado'],
     default: 'pendiente'
   },
   isPaid: {
